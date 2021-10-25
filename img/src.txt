@@ -1,0 +1,2 @@
+image source: 
+cust-churn-img.jpeg: https://miro.medium.com/max/1838/0*lAu-PO47aN-ypr2S.jpeg
