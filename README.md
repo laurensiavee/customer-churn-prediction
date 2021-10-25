@@ -25,9 +25,8 @@ Model Building and Metric:
 
 <br/>
 
-***check full jupyter notebook [here](customer-churn.ipynb)***
+***check full jupyter notebook [here](customer_churn.ipynb)***
 
-<br/>
 <br/>
 
 ## Folder Structure
