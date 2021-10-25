@@ -25,7 +25,7 @@ Model Building and Metric:
 
 <br/>
 
-***check full jupyter notebook here***
+***check full jupyter notebook [here]("customer-churn.ipynb")***
 
 <br/>
 <br/>
@@ -78,11 +78,11 @@ Dataset sourced from IBM Telco Customer dataset, which uploaded on kaggle by Bla
 
 In the model, Churn is the target of the classification.
 
-<img src="img/cust-churn-img.jpeg" width=240px>
+<p align="center"><img src="plot/1.png" width=250px></p>
 
 73,4 customer not churned. The dataset is skewed, but its normal since on a business, we expect there's more customer who stayed. However, this skewness can lead to false negatives. The skewness is handled with upsampling minorities(churn), so the ratio is balanced
 
-<img src="img/cust-churn-img.jpeg" width=240px>
+<p align="center"><img src="plot/30.png" width=350px></p>
 
 <br/>
 <br/>
@@ -94,61 +94,190 @@ tenure, MonthlyCharges, and TotalCharges are numerical feature on the data.
 
 Analyse distribution:
 
-<img src="img/cust-churn-img.jpeg" width=240px>
-<img src="img/cust-churn-img.jpeg" width=240px>
-<img src="img/cust-churn-img.jpeg" width=240px>
-
-<img src="img/cust-churn-img.jpeg" width=240px>
-<img src="img/cust-churn-img.jpeg" width=240px>
-<img src="img/cust-churn-img.jpeg" width=240px>
+<p align="center">
+<img src="plot/2.png" width=350px>
+<img src="plot/5.png" width=350px>
+</p>
+customer who churned tend to have tenure on 0-20
 
 <br/>
 <br/>
 
-MonthlyCharges vs TotalCharges
-
-<img src="img/cust-churn-img.jpeg" width=240px>
+<p align="center">
+<img src="plot/3.png" width=350px>
+<img src="plot/6.png" width=350px>
+</p>
+customer who churned tend to have higher MonthlyCharges, while customer who not churned tend to have lower Monthly Charges
 
 <br/>
+<br/>
+
+<p align="center">
+<img src="plot/4.png" width=350px>
+<img src="plot/7.png" width=350px>
+</p>
+there's no pattern on TotalCharges. both customer who churn and not churn tend to have lower TotalCharges between 0-2000. There's slightly higher density on higher TotalCharges on customer who not churn, but still mostly on lower TotalCharges.
+
+<br/>
+<br/>
+
+
+**MonthlyCharges vs TotalCharges**
+
+<img src="plot/8.png" width=400px>
+
+there are linear relationship, where bigger the Monthly Charges, bigger the Total Charges, which was normal.
 <br/>
 <br/>
 
 ### **Categorical Features**
+<br/>
+
 - Gender
+
+<img src="plot/9.png" width=400px>
+<br/>
+
+female and male customer count balanced and Churn ratio also similar, this mean there's no majority gender on customer and one gender don't tend to Churn.
+
 - SeniorCitizen
+
+<img src="plot/10.png" width=400px>
+<br/>
+
+most of customer wasn't a senior citizen. however, senior citizen has more churn rate then customer who are not a senior citizen.
+
 - Partner
+
+<img src="plot/11.png" width=400px>
+<br/>
+
+customer who has and doesn't has partner count is balanced. customer who don't has partner show slightly higher churn rate.
+
 - Dependents
 
+<img src="plot/12.png" width=400px>
+<br/>
+
+most customer doesn't have dependents. customer who has dependents shows lower churn rate the customer who don't
+
 - PhoneService
+
+<img src="plot/13.png" width=480px>
+<br/>
+
+majority of customer have PhoneService, there's no significant churn ratio deferences between customer who have Phone Service or not
+
 - MultipleLines
+
+<img src="plot/14.png" width=480px>
+<br/>
+
+out of 90,3% customer who have Phone Service, half of them used MultipleLines and others don't. There's also ni significant churn ratio differences between cutomer who used Multiple Lines and not
+
 - InternetService
+
+<img src="plot/15.png" width=480px>
+<br/>
+
+customer who used fiber optic shows more churn rate than the other two, with customer who didn't use internet service has the lowest churn rate
+
 - OnlineSecurity
+
+<img src="plot/16.png" width=480px>
+<br/>
+
+half of the customer don't used OnlineSecurity, and has the highest churn rate.
+
 - OnlineBackup
+
+<img src="plot/17.png" width=480px>
+<br/>
+
 - DeviceProtection
+
+<img src="plot/18.png" width=480px>
+<br/>
+
 - TechSupport
+
+<img src="plot/19.png" width=480px>
+<br/>
+
+half of customer has no tech support and 41,6% of customer with no tech support churned. this comparision is so big compared to customer with tech support with only 15,2& churn rate
+
 - StreamingTV
+
+<img src="plot/20.png" width=480px>
+<br/>
+
 - StreamingMovies
+
+<img src="plot/21.png" width=480px>
+<br/>
+
 - Contract
-<!-- contract vs tenire -->
+
+<img src="plot/22.png" width=480px>
+<br/>
+
+month-to-month contract being a majority, and with the highest churn rate od 42,7% meanwhile one year contract has 11.3% churn rate and two year only 2,8% churn rate. this show loyal customer tend to make contract with longer period.
+
+
+<img src="plot/23.png" width=500px>
+<br/>
+
+comparision:
+<img src="plot/24.png" width=450px>
+<br/>
 
 - Paperless Billing
+
+
+<img src="plot/25.png" width=480px>
+<br/>
+
+majority user used paperless billing, but have slightly more churn rate too.
+
 - Payment Method
+
+<img src="plot/26.png" width=350px>
+<br/>
+
+payment method distributed pretty well, electronic check slightly have bigger count.
+
+<img src="plot/27.png" width=480px>
+<br/>
+
+yet being slightly larger count than other, electronic check has biggest churn rate of 45,3% while other has only under 20% churn rate.
 
 <br/>
 <br/>
 <br/>
 
 ### **Correlation Matrix**
-Correlation is 
+From all feature listed, we clearly can see what features effecting churn rate and whats dont. for example, tenure seems correlated well with churn because there's slightly visible imbalance of tenure who churn vs tenure who don't. other example of correlated well with churn is senior citizen, where there're more churn ratio on senior citizen the customer who are not senior citizen. In other hand, feature like gender seems not correlated well with churn rate, there're no visbile difference in count of each gender who tend to churn. 
 
-Correlation Heatmap for every feature:
+With this as assumption, we also can measure the correlation with correlation matrix.
 
-Correlation Heatmap on every feature to Churn:
+**Correlation Heatmap for every feature:**
 
-5 Most Feature Correlated to Churn:
-
+<img src="plot/28.png" width=500px>
 <br/>
+
+from the heatmap above, feature that highly correlated shown by darker red (positively highly correlated) or darker blue (negatively highly correlated). we can see tenure is highly correlated to totalcharges, churn, payment method, etc.
+
+**Correlation Heatmap on every feature to Churn:**
+
+<img src="plot/29.png" height=550px>
 <br/>
+
+we can see that the most positive correlated with churn is PaperlessBilling, MonthlyCharges, and SeniorCitizen. and the most negatively correlated with churn is Contract, tenure, and OnlineSecurity. we've predict some of this before on our data analysis by ploting. 
+
+Based on Feature Correlation to Churn, I decide to not include really low correlation score to the model as it can categorized as noise. The model feed with feature:
+
+['Churn', 'Contract', 'tenure', 'OnlineSecurity', 'TechSupport', 'TotalCharges', 'OnlineBackup', 'PaperlessBilling', 'MonthlyCharges', 'DeviceProtection', 'Dependents', 'SeniorCitizen', 'Partner', 'PaymentMethod']
+
 <br/>
 
 ## **MODEL RESULT AND CONCLUSION**
@@ -165,6 +294,13 @@ I used 6 Machine Learning Algorithm to predict/classified customer as Churn or N
 
 Model Accuracy Comparision:
 
+                    model       acc
+    5        Random Forest  0.889472
+    1        Decision Tree  0.861922
+    3             XG Boost  0.843555
+    4             Adaboost  0.768121
+    2                  SVM  0.759265
+    0  Logistic Regression  0.755986
 
 <br/>
 
