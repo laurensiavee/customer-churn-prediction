@@ -25,12 +25,22 @@ Model Building and Metric:
 
 <br/>
 
-***check full jupyter notebook [here]("customer-churn.ipynb")***
+***check full jupyter notebook [here](customer-churn.ipynb)***
 
 <br/>
 <br/>
 
 ## Folder Structure
+```
+.
+├── img/                                : contain image used
+|   └── cust-churn-img.jpeg
+|   └── src.txt                         : link source for image
+└── plot/                               : contain image file of plot 
+└── .gitignore
+└── README.md
+└── customer_churn.ipynb                : complete notebook of churn prediction
+```
 
 <br/>
 
