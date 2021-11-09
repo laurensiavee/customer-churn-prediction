@@ -1,5 +1,9 @@
-# CUSTOMER CHURN PREDICTION
-### Predicting Customer Churn with Machine Learning Classification Algorithm.
+# CUSTOMER CHURN PREDICTION AND CUSTOMER CLUSTERING
+## Predicting Customer Churn with Machine Learning Classification Algorithm
+
+#
+
+**NOTE:** for Customer Clustering, please check the repository [here](customer-clustering/). However, we analyse the dataset here.
 
 <br/>
 
@@ -11,7 +15,7 @@
 *Churn* can be defined as customer who stop, discontinue, or unsubscribe to a service or business. On a business, maintaining a customer was an important thing to do, yet it could be really hard to do. One way to predict customer behaviour is to analyse customer based on data. In the era of Big Data and Machine Learning, we can learn about customer and analyse customer behaviour pattern to do a prediction.
 By building a model, companies can predict customer who're at high risk of churn and find new strategy to maintain customers.
 
-<br/>
+# 
 
 ### **Objective**
 Exploring and Analyze data and try to answer some question such as:
@@ -23,15 +27,20 @@ Model Building and Metric:
 - Whats the best accuracy of the model?
 - What model predict the best?
 
-<br/>
+#
 
 ***check full jupyter notebook [here](customer_churn.ipynb)***
 
-<br/>
+#
 
 ## Folder Structure
 ```
 .
+├── customer-clustering/                : repository for customer clustering for Telco Dataset
+|   └── plot/                           : contain image file of plot 
+|   └── .gitignore 
+|   └── README.md
+|   └── customer_clustering.ipynb       : notebook of customer clustering
 ├── img/                                : contain image used
 |   └── cust-churn-img.jpeg
 |   └── src.txt                         : link source for image
@@ -41,14 +50,14 @@ Model Building and Metric:
 └── customer_churn.ipynb                : complete notebook of churn prediction
 ```
 
-<br/>
+#
 
 ## TABLE OF CONTENT
 - THE DATASET
 - EXPLORATORY DATA ANALYSIS (EDA)
 - MODEL RESULT AND CONCLUSION
 
-<br/>
+#
 
 ## **THE DATASET**
 Dataset sourced from IBM Telco Customer dataset, which uploaded on kaggle by BlastChar: https://www.kaggle.com/blastchar/telco-customer-churn
@@ -76,7 +85,7 @@ Dataset sourced from IBM Telco Customer dataset, which uploaded on kaggle by Bla
     - TotalCharges      : total amount of customer's charges
     - Churn             : whether the customer churned or not
 
-<br/>
+#
 
 ## **EXPLORATORY DATA ANALYSIS (EDA)**
 *check jupyter notebook for complete EDA and code*
@@ -133,7 +142,7 @@ there's no pattern on TotalCharges. both customer who churn and not churn tend t
 
 **MonthlyCharges vs TotalCharges**
 
-<img src="plot/8.png" width=400px>
+<p align="center"><img src="plot/8.png" width=400px></p>
 
 there are linear relationship, where bigger the Monthly Charges, bigger the Total Charges, which was normal.
 <br/>
@@ -144,123 +153,123 @@ there are linear relationship, where bigger the Monthly Charges, bigger the Tota
 
 - Gender
 
-<img src="plot/9.png" width=400px>
+<p align="center"><img src="plot/9.png" width=400px></p>
 <br/>
 
 female and male customer count balanced and Churn ratio also similar, this mean there's no majority gender on customer and one gender don't tend to Churn.
 
 - SeniorCitizen
 
-<img src="plot/10.png" width=400px>
-<br/>
+<p align="center"><img src="plot/10.png" width=400px>
+<br/></p>
 
 most of customer wasn't a senior citizen. however, senior citizen has more churn rate then customer who are not a senior citizen.
 
 - Partner
 
-<img src="plot/11.png" width=400px>
-<br/>
+<p align="center"><img src="plot/11.png" width=400px>
+<br/></p>
 
 customer who has and doesn't has partner count is balanced. customer who don't has partner show slightly higher churn rate.
 
 - Dependents
 
-<img src="plot/12.png" width=400px>
+<p align="center"><img src="plot/12.png" width=400px></p>
 <br/>
 
 most customer doesn't have dependents. customer who has dependents shows lower churn rate the customer who don't
 
 - PhoneService
 
-<img src="plot/13.png" width=480px>
+<p align="center"><img src="plot/13.png" width=480px></p>
 <br/>
 
 majority of customer have PhoneService, there's no significant churn ratio deferences between customer who have Phone Service or not
 
 - MultipleLines
 
-<img src="plot/14.png" width=480px>
+<p align="center"><img src="plot/14.png" width=480px></p>
 <br/>
 
 out of 90,3% customer who have Phone Service, half of them used MultipleLines and others don't. There's also ni significant churn ratio differences between cutomer who used Multiple Lines and not
 
 - InternetService
 
-<img src="plot/15.png" width=480px>
+<p align="center"><img src="plot/15.png" width=480px></p>
 <br/>
 
 customer who used fiber optic shows more churn rate than the other two, with customer who didn't use internet service has the lowest churn rate
 
 - OnlineSecurity
 
-<img src="plot/16.png" width=480px>
+<p align="center"><img src="plot/16.png" width=480px></p>
 <br/>
 
 half of the customer don't used OnlineSecurity, and has the highest churn rate.
 
 - OnlineBackup
 
-<img src="plot/17.png" width=480px>
+<p align="center"><img src="plot/17.png" width=480px></p>
 <br/>
 
 - DeviceProtection
 
-<img src="plot/18.png" width=480px>
+<p align="center"><img src="plot/18.png" width=480px></p>
 <br/>
 
 - TechSupport
 
-<img src="plot/19.png" width=480px>
+<p align="center"><img src="plot/19.png" width=480px></p>
 <br/>
 
 half of customer has no tech support and 41,6% of customer with no tech support churned. this comparision is so big compared to customer with tech support with only 15,2& churn rate
 
 - StreamingTV
 
-<img src="plot/20.png" width=480px>
+<p align="center"><img src="plot/20.png" width=480px></p>
 <br/>
 
 - StreamingMovies
 
-<img src="plot/21.png" width=480px>
+<p align="center"><img src="plot/21.png" width=480px></p>
 <br/>
 
 - Contract
 
-<img src="plot/22.png" width=480px>
+<p align="center"><img src="plot/22.png" width=480px></p>
 <br/>
 
 month-to-month contract being a majority, and with the highest churn rate od 42,7% meanwhile one year contract has 11.3% churn rate and two year only 2,8% churn rate. this show loyal customer tend to make contract with longer period.
 
 
-<img src="plot/23.png" width=500px>
+<p align="center"><img src="plot/23.png" width=500px></p>
 <br/>
 
 comparision:
-<img src="plot/24.png" width=450px>
+
+<p align="center"><img src="plot/24.png" width=450px></p>
 <br/>
 
 - Paperless Billing
 
 
-<img src="plot/25.png" width=480px>
+<p align="center"><img src="plot/25.png" width=480px></p>
 <br/>
 
 majority user used paperless billing, but have slightly more churn rate too.
 
 - Payment Method
 
-<img src="plot/26.png" width=350px>
+<p align="center"><img src="plot/26.png" width=350px></p>
 <br/>
 
 payment method distributed pretty well, electronic check slightly have bigger count.
 
-<img src="plot/27.png" width=480px>
+<p align="center"><img src="plot/27.png" width=480px></p>
 <br/>
 
 yet being slightly larger count than other, electronic check has biggest churn rate of 45,3% while other has only under 20% churn rate.
 
-<br/>
 <br/>
 <br/>
 
@@ -271,14 +280,14 @@ With this as assumption, we also can measure the correlation with correlation ma
 
 **Correlation Heatmap for every feature:**
 
-<img src="plot/28.png" width=500px>
+<p align="center"><img src="plot/28.png" width=500px></p>
 <br/>
 
 from the heatmap above, feature that highly correlated shown by darker red (positively highly correlated) or darker blue (negatively highly correlated). we can see tenure is highly correlated to totalcharges, churn, payment method, etc.
 
 **Correlation Heatmap on every feature to Churn:**
 
-<img src="plot/29.png" height=550px>
+<p align="center"><img src="plot/29.png" height=550px></p>
 <br/>
 
 we can see that the most positive correlated with churn is PaperlessBilling, MonthlyCharges, and SeniorCitizen. and the most negatively correlated with churn is Contract, tenure, and OnlineSecurity. we've predict some of this before on our data analysis by ploting. 
@@ -287,7 +296,7 @@ Based on Feature Correlation to Churn, I decide to not include really low correl
 
 ['Churn', 'Contract', 'tenure', 'OnlineSecurity', 'TechSupport', 'TotalCharges', 'OnlineBackup', 'PaperlessBilling', 'MonthlyCharges', 'DeviceProtection', 'Dependents', 'SeniorCitizen', 'Partner', 'PaymentMethod']
 
-<br/>
+#
 
 ## **MODEL RESULT AND CONCLUSION**
 
@@ -311,7 +320,7 @@ Model Accuracy Comparision:
     2                  SVM  0.759265
     0  Logistic Regression  0.755986
 
-<br/>
+#
 
 ## CONCLUSION
 We've implemented Churn Prediction with several machine learning algorithm with performance accuracy of 75-88%. With this model, we can improve business, esspecially to maintain customer from churn or leaving. 
